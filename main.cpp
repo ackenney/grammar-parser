@@ -88,6 +88,17 @@ int main()
 		cout << "\t" << setw(10);
 		outFile << "\t" << setw(10);
 
+		// Printing stack
+		while (!myStack.empty())
+		{
+
+			tempStack.push(myStack.top()); // Keeping values in temp stack
+			cout << myStack.top(); // Output to console
+			outFile << myStack.top(); // Output to file
+			myStack.pop(); // Removing top value
+			index = index + 1; // Index for formatting
+		}
+
 
 	return 0;
 
