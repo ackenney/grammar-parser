@@ -99,6 +99,26 @@ int main()
 			index = index + 1; // Index for formatting
 		}
 
+		// While loop reorders the stack
+		while (!tempStack.empty())
+		{
+
+			myStack.push(tempStack.top());
+			printString.push_back(tempStack.top());
+			tempStack.pop();
+		}
+
+		for (int i = 0; i < 11 - index; i++)
+		{
+			cout << " "; // Output to console
+			outFile << " "; // Ouput to file
+		}
+		index = 0; // reset formatting index
+
+		// Printing input to console and file
+		cout << setw(13) << input;
+		outFile << setw(13) << input;
+
 
 	return 0;
 
