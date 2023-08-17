@@ -1,3 +1,4 @@
+
 // This program is an implementation of a top down parser
 
 // Include Statements
@@ -118,6 +119,43 @@ int main()
 		// Printing input to console and file
 		cout << setw(13) << input;
 		outFile << setw(13) << input;
+
+		// Printing action
+		// if flag2 is false its an output action if its true then its a matched action
+		if (flag2 == false)
+		{
+			if (parseTable[row][col] == " ")
+			{
+				cout << "\t\n";
+				outFile << "\t\n";
+			}
+			else
+			{
+				cout << "\t";
+				// print action to console
+				cout << " Output" << stackTop << "->" << parseTable[row][col] << endl;
+
+				outFile << "\t";
+				// print action to file
+				outFile << " Output" << stackTop << "->" << parseTable[row][col] << endl;
+
+			}
+
+
+		}
+		if (flag2 == true)
+		{
+			// Printing matched action to file and console
+			cout << "\t";
+			cout << " Match " << stackTop << endl;
+			outFile << "\t";
+			outFile << " Match " << stackTop << endl;
+			flag2 = false;
+		}
+
+		tempString = input[0]; // Setting tempChar to the first
+		stackTop = myStack.top(); // setting stackTop();
+
 
 
 	return 0;
