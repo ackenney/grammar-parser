@@ -15,6 +15,7 @@ using std::cout;
 using std::ofstream;
 using std::vector;
 using std::setw;
+using std::endl;
 
 int main()
 {
