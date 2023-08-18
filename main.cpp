@@ -1,4 +1,3 @@
-
 // This program is an implementation of a top down parser
 
 // Include Statements
@@ -155,6 +154,22 @@ int main()
 
 		tempString = input[0]; // Setting tempChar to the first
 		stackTop = myStack.top(); // setting stackTop();
+
+		// Handling ' stack values
+		tempStack.push(myStack.top());
+		myStack.pop();
+		if (myStack.top() == '\'')
+		{
+			stackTop.push_back(myStack.top());
+			myStack.push(tempStack.top());
+		}
+		else if (myStack.top() != '\'')
+		{
+			myStack.push(tempStack.top());
+		}
+		tempStack.pop();
+
+
 
 
 
