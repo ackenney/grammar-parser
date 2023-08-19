@@ -192,7 +192,39 @@ int main()
 		// setting replace to parse table value
 		replace = parseTable[row][col];
 
+		// Checking if the top value is a match
+		if (myStack.top() == input[0])
+		{
+			matched.push_back(input[0]);
+			input.erase(0, 1);
+			tempString = input[0];
+			myStack.pop();
+			flag2 = true;
+		}
 
+		// Replacing non terminal value
+		else if (flag1 == true)
+		{
+
+			myStack.pop();
+			while (myStack.top() == '\'')
+			{
+				myStack.pop();
+			}
+			while (!replace.empty())
+			{
+				myStack.push(replace.back());
+				replace.pop_back();
+			}
+
+		}
+		// Removing top value and adding value from the table in the correct order
+		if (myStack.top() == 'e')
+		{
+			myStack.pop();
+		}
+
+	}
 
 
 	return 0;
