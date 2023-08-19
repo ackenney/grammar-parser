@@ -170,6 +170,27 @@ int main()
 		}
 		tempStack.pop();
 
+		// Checking if its non teminal and getting the row and column index
+		for (int i = 0; i < 6; i++)
+		{
+			if (stackTop == parseTable[i][0]) // Then it is a non terminal
+			{
+				row = i;
+				flag1 = true;
+				break;
+			}
+
+		}
+		for (int i = 0; i < 7; i++)
+		{
+			if (tempString == parseTable[0][i])
+			{
+				col = i;
+				break;
+			}
+		}
+		// setting replace to parse table value
+		replace = parseTable[row][col];
 
 
 
