@@ -1,0 +1,26 @@
+================================================================================
+Matched		 Stack		 Input		 Action
+--------------------------------------------------------------------------------
+	         E$              (i+i)*i$	
+	         TE'$            (i+i)*i$	 OutputE->TE'
+	         FT'E'$          (i+i)*i$	 OutputT->FT'
+	         (E)T'E'$        (i+i)*i$	 OutputF->(E)
+(	         E)T'E'$          i+i)*i$	 Match (
+(	         TE')T'E'$        i+i)*i$	 OutputE->TE'
+(	         FT'E')T'E'$      i+i)*i$	 OutputT->FT'
+(	         iT'E')T'E'$      i+i)*i$	 OutputF->i
+(i	         T'E')T'E'$        +i)*i$	 Match i
+(i	         E')T'E'$          +i)*i$	 OutputT'->e
+(i	         +TE')T'E'$        +i)*i$	 OutputE'->+TE'
+(i+	         TE')T'E'$          i)*i$	 Match +
+(i+	         FT'E')T'E'$        i)*i$	 OutputT->FT'
+(i+	         iT'E')T'E'$        i)*i$	 OutputF->i
+(i+i	         T'E')T'E'$          )*i$	 Match i
+(i+i	         E')T'E'$            )*i$	 OutputT'->e
+(i+i	         )T'E'$              )*i$	 OutputE'->e
+(i+i)	         T'E'$                *i$	 Match )
+(i+i)	         *FT'E'$              *i$	 OutputT'->*FT'
+(i+i)*	         FT'E'$                i$	 Match *
+(i+i)*	         iT'E'$                i$	 OutputF->i
+(i+i)*i	         T'E'$                  $	 Match i
+(i+i)*i	         E'$                    $	 OutputT'->e
